@@ -20,12 +20,15 @@ Lets Have a look at the Service itself . Very basic idea but works a treat. They
 Lets put together a small vm with the following components
 
 #Installations required
+````
+```
 apt get-install python3-pip
 apt-get install jq
 pip3 install --upgrade pip
 pip3 install flask flask_shell2http
 pip3 install waitress
-
+```
+````
 
 Shell script to START a server
 
