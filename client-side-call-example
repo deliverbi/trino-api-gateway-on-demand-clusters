@@ -1,0 +1,33 @@
+#for shell program apt-get install jq -- client side
+#------------------------Shell program to loop
+v_url=$1
+
+#m1stop m1start m2start m2stop etc
+
+key_id=`curl -X POST http://DELIVERBI-trino-analyzer:5000/commands/$v_url | jq -r '.key'`
+
+#echo "$key_id" > key.name
+
+while true ; do
+
+#key_value=`cat ~/key.name`
+
+#echo "$key_value"
+
+isnodeactive=`curl -s http://DELIVERBI-trino-analyzer:5000/commands/$v_url?key=$key_id`
+
+#echo "Curl Response is : $isnodeactive"
+
+#If response is null then shut it down as systemctl service has been shutdown completely
+#string='$isnodeactive'
+if [[ $isnodeactive == *"running"* ]]; then
+  echo "Running $key_id"
+  sleep 10s
+elif [ $isnodeactive == *"ServerUP"* ] || [ $isnodeactive == *"ServerDOWN"* ]; then
+  echo "Complete $key_id"
+  break
+else echo "ERROR"
+break
+fi
+ 
+done
