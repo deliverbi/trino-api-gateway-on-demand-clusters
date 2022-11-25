@@ -1,5 +1,5 @@
 # Creating a Basic Trino Service to Start On Demand Clusters for ADHOC Large ETL Jobs on GCP Google Cloud Platform using Python Flask.
-Creating a Basic Trino Service to Start On Demand Clusters for ADHOC Large ETL Jobs on GCP Google Cloud Platform using Python Flask.
+
 
 
 Creating a Basic Trino Service to Start On Demand Clusters for ADHOC Large ETL Jobs on GCP Google Cloud Platform using Python Flask.
